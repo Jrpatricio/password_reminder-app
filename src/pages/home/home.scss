@@ -1,3 +1,19 @@
 page-home {
+    ion-title {
+        text-align: center;
+        padding: auto;
+    }
 
+    img {
+        width: 75%;
+        align-self: center;
+        margin: auto;
+        display: block;
+        padding: auto;
+    }
+
+    .button-size {
+        margin-top: 10px;
+        height: 45px;
+    }
 }
