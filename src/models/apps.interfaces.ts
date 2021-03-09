@@ -7,7 +7,7 @@ export interface IApps {
 
 export interface IApp {
     id: string,
-    name?: string,
+    appName?: string,
     username: string,
     password: string
 }
