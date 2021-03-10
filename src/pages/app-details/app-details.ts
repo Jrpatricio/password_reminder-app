@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the AppDetailsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { IApp } from '../../models/apps.interfaces';
 
 @IonicPage()
 @Component({
@@ -15,11 +9,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AppDetailsPage {
 
+  app: IApp;
+  enableEdit: boolean = false;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.app = this.navParams.get('app');
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad AppDetailsPage');
+  }
+
+  openModalEdit() {
+    //this.enableEdit = true;
+    console.log('TODO Modal para edição dos dados')
   }
 
 }

@@ -26,8 +26,7 @@ export class AppsListPage {
   }
 
   goToNextPage(app: IApp) {
-    console.log(app)
-    this.navCtrl.push('HomePage');
+    this.navCtrl.push('AppDetailsPage', { app: app });
   }
 
   private loadAppData() {
