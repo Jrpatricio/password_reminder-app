@@ -4,7 +4,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding *ngIf="!enableEdit">
   <ion-card>
     <ion-item>
       <ion-thumbnail item-start>
@@ -18,8 +18,9 @@
       <div class="user-password-content">
         <label>Senha</label>
         <p>{{app.password}}</p>
+        <ion-icon name="eye"></ion-icon>
+        <ion-icon name="clipboard"></ion-icon>
       </div>
-
       <ion-icon name="create" item-right (click)="openModalEdit()"></ion-icon>
     </ion-item>
   </ion-card>
