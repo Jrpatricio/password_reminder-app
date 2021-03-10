@@ -5,10 +5,10 @@ import { AppsService } from '../../service/domain/apps.service';
 
 @IonicPage()
 @Component({
-  selector: 'page-apps',
-  templateUrl: 'apps.html',
+  selector: 'page-apps-list',
+  templateUrl: 'apps-list.html',
 })
-export class AppsPage {
+export class AppsListPage {
   apps: IApp[];
 
   constructor(
@@ -18,13 +18,22 @@ export class AppsPage {
   }
 
   ionViewDidLoad() {
+    this.loadAppData();
+  }
+
+  ionViewWillEnter() {
+    this.loadAppData();
+  }
+
+  goToNextPage(app: IApp) {
+    console.log(app)
+    this.navCtrl.push('HomePage');
+  }
+
+  private loadAppData() {
     this.appsService.findAll().subscribe(res => {
       this.apps = res.apps
     });
-  }
-
-  goToNextPage(){
-    this.navCtrl.push('HomePage');
   }
 
 }

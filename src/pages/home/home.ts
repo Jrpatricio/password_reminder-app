@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, MenuController, NavController } from 'ionic-angular';
+import { ICredentials } from '../../models/credentials.interfaces';
 
 @IonicPage()
 @Component({
@@ -8,12 +9,18 @@ import { IonicPage, MenuController, NavController } from 'ionic-angular';
 })
 export class HomePage {
 
+  credentials: ICredentials = {
+    email: "",
+    password: ""
+  };
+
   constructor(public navCtrl: NavController, public menu: MenuController) {
 
   }
 
   login() {
-    this.navCtrl.setRoot('AppsPage')
+    console.log(this.credentials)
+    this.navCtrl.setRoot('AppsListPage')
   }
 
   ionViewWillEnter() {

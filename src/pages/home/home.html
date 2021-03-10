@@ -11,12 +11,12 @@
   <form>
     <ion-item>
       <ion-label stacked>Email</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input [(ngModel)]="credentials.email" name="email" type="text"></ion-input>
     </ion-item>
     <br>
     <ion-item>
       <ion-label stacked>Senha</ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-input [(ngModel)]="credentials.password" name="password" type="password"></ion-input>
     </ion-item>
     <br>
     <button ion-button block class="button-home" (click)="login()">Entrar</button>

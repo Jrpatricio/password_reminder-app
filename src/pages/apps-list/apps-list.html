@@ -8,12 +8,16 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-list>
-    <button ion-item *ngFor="let app of apps" (click)="goToNextPage()">
+  <ion-list *ngIf="apps">
+    <ion-item button="true" *ngFor="let app of apps" (click)="goToNextPage(app)">
       <ion-thumbnail item-start>
         <img src="assets/imgs/ionic.png" alt="logo">
       </ion-thumbnail>
       <ion-label>{{app.appName}}</ion-label>
-    </button>
+    </ion-item>
+  <ion-item> </ion-item>
   </ion-list>
+  <div class="empty-app-list" *ngIf="!apps">
+    <p>Não encontramos nenhum app cadastrado! Assim que você o cadastrar eles devem parecer aqui ;)</p>
+  </div>
 </ion-content>
