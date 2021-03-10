@@ -1,3 +1,22 @@
 page-app-details {
+    div {
+        margin-left: 5px;
+    }
 
+    label {
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    button {
+        border-color: transparent;
+    }
+    ion-icon {
+        color: #424242;
+        padding-right: 5px;
+    }
 }
