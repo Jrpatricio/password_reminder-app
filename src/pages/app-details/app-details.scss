@@ -15,8 +15,27 @@ page-app-details {
     button {
         border-color: transparent;
     }
+
     ion-icon {
         color: #424242;
         padding-right: 5px;
+    }
+
+    .show-hide-icon {
+        color: black;
+        font-size: 3rem;
+    }
+
+    ion-row {
+     
+        ion-icon {
+            font-size: 25px;
+            padding-left: 10px;
+            color: #424242;
+        }
+        button {
+            border-color: transparent;
+            padding-left: 10px; 
+        }
     }
 }

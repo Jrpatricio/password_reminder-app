@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { IApp } from '../../models/apps.interfaces';
 
-/**
- * Generated class for the ModalAppPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -15,11 +10,30 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ModalAppPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  public showPassword: boolean = false;
+  app: IApp;
+
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams,
+              private view: ViewController) {
+    this.app = this.navParams.get('app');
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ModalAppPage');
+    console.log('ionViewDidLoad ModalAppPage', this.app);
   }
 
+  closeModal() {
+    const data = {
+      name: 'John Doe',
+      occupation: 'Milkman'
+    };
+    this.view.dismiss(data);
+  }
+
+  public onPasswordToggle(): void {
+    this.showPassword = !this.showPassword;
+  }
+
+  
 }

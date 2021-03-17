@@ -17,11 +17,23 @@
 
       <div class="user-password-content">
         <label>Senha</label>
-        <p>{{app.password}}</p>
-        <ion-icon name="eye"></ion-icon>
-        <ion-icon name="clipboard"></ion-icon>
+        <ion-row>
+          <p>{{app.password}}</p>
+        </ion-row>
       </div>
-      <ion-icon name="create" item-right (click)="openModalEdit()"></ion-icon>
     </ion-item>
+
+    <ion-row>
+      <ion-col>
+        <button ion-button clear full icon-only (click)="openModalEdit()">
+          <ion-icon name="clipboard"></ion-icon>Copiar 
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button clear full icon-only (click)="openModalEdit()">
+          <ion-icon name="create"></ion-icon>Editar
+        </button>
+      </ion-col>
+    </ion-row>
   </ion-card>
 </ion-content>
