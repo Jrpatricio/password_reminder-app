@@ -9,5 +9,7 @@ export interface IApp {
     id: string,
     appName?: string,
     username: string,
-    password: string
+    password: string,
+    createdAt: string,
+    updatedAt: string
 }

@@ -12,8 +12,8 @@ export class AppsService {
     }
 
     findAll(): Observable<IApps> {
-        const user = 1;
-        return this.http.get<IApps>(`${API_CONFIG.baseUrl}/apps?user=${user}`);
+        const userId = 1;
+        return this.http.get<IApps>(`${API_CONFIG.baseUrl}/apps?user=${userId}`);
     }
 
 

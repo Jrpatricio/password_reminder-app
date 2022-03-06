@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { IApp } from '../../models/apps.interfaces';
+//import { IApp } from '../../models/apps.interfaces';
 
 @IonicPage()
 @Component({
@@ -10,7 +11,10 @@ import { IApp } from '../../models/apps.interfaces';
 export class AppDetailsPage {
 
   public showPassword: boolean = false;
-  app: IApp;
+
+  app: IApp
+  
+  //app = {id: 1, appName: 'Amazon', username: 'ale', password: '123'}
   enableEdit: boolean = false;
 
   constructor(public navCtrl: NavController, 
@@ -20,7 +24,7 @@ export class AppDetailsPage {
   }
 
   ionViewDidLoad() {
-    console.log('HAAHA');
+    console.log(this.app);
   }
 
   openModalEdit() {

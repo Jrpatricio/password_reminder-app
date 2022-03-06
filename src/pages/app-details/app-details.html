@@ -5,28 +5,26 @@
 </ion-header>
 
 <ion-content padding *ngIf="!enableEdit">
-  <ion-card>
+  <form>
     <ion-item>
-      <ion-thumbnail item-start>
-        <img src="assets/imgs/ionic.png" alt="logo">
-      </ion-thumbnail>
-      <div class="user-password-content">
-        <label>User/Email</label>
-        <p>{{app.username}}</p>
-      </div>
-
-      <div class="user-password-content">
-        <label>Senha</label>
-        <ion-row>
-          <p>{{app.password}}</p>
-        </ion-row>
-      </div>
+      <ion-label stacked>Email</ion-label>
+      <ion-input [(ngModel)]="app.appName" [ngModelOptions]="{standalone: true}"></ion-input>
     </ion-item>
+    <br>
+
+    <ion-item no-border>
+      <ion-label stacked>Senha</ion-label>
+      <ion-input placeholder="Password" [(ngModel)]="app.password" [ngModelOptions]="{standalone: true}" [type]="showPassword ? 'text' : 'password'" clearOnEdit="false"></ion-input>
+      <button (click)="onPasswordToggle()" ion-button clear item-end icon-only>
+        <ion-icon name="copy"></ion-icon>
+      </button>
+  </ion-item>
+  </form>
 
     <ion-row>
       <ion-col>
         <button ion-button clear full icon-only (click)="openModalEdit()">
-          <ion-icon name="clipboard"></ion-icon>Copiar 
+          <ion-icon name="copy"></ion-icon>Copiar 
         </button>
       </ion-col>
       <ion-col>
@@ -35,5 +33,10 @@
         </button>
       </ion-col>
     </ion-row>
-  </ion-card>
+    <br><br>
+    <ion-row>
+      <span><b>Criado em: </b>{{app.createdAt}}</span>
+      <br><br>
+      <span><b>Modificado em: </b>{{app.createdAt}}</span>
+    </ion-row>
 </ion-content>
